@@ -12,11 +12,12 @@ def tweet_list_view(request, *args, **kwargs):
     REST API VIEW
     Consume by javascript or Swift/java/ios/android
     return json data
-    
+    tweet_list_view
     """
     qs = Tweet.objects.all()
     tweets_list = [{"id":x.id, "content":x.content} for x in qs]
     data = {
+        "is_user":False,
         "response": tweets_list
     }
 
