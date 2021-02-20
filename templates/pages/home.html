@@ -18,6 +18,11 @@
     const url = '/tweets'
     const reponseType = "json"
 
+    function formatTweetElement(tweet){
+        var formattedTweet = "<div class='mb-4' id='"+ tweet.id +"' ><p>" +"<p>"+tweet.content+"</p></div>"
+        return formattedTweet
+    }
+
     xhr.responseType = reponseType
     xhr.open(method, url)
     xhr.onload = function (){
@@ -26,9 +31,8 @@
         var finalTweetStr = ""
         var i;
         for (i=0; i<listedItems.length; i++){
-            console.log(i)
-            console.log(listedItems[i])
-            var currentItem = "<h1>"+listedItems[i].id +"</h1>"+"<p>"+listedItems[i].content+"</p>"
+            var tweetObj = listedItems[i]
+            var currentItem = formatTweetElement(tweetObj)
 
             finalTweetStr += currentItem 
         }
