@@ -6,14 +6,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
+    <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <style>
+        .bg-tweetme {
+            background-color: #8e1f1f!important;
+        }
 
+        #footer{
+        background: black;
+        color: #fff;
+        font-size: 14px;
+        width: 100%;
+      }
+
+      .footer-top{
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding:50px 0;
+      }
+
+      .footer-top h3{
+        font-size: 36px;
+        font-weight: bold;
+        color: #fff;
+        position: relative;
+        padding:10px 0 0 0;
+        margin-bottom: 0;
+      }
+
+      .footer-top p{
+        font-size: 15px;
+        font-style: italic;
+        margin: 30px 0 0 0;
+        padding: 0;
+      }
+
+      .footer-newsletter{
+        text-align: center;
+        font-size: 15px;
+        margin-top: 30px;
+      }
+      .footer-newsletter form{
+        background: #fff;
+        padding: 6px 10px;
+        position: relative;
+        border-radius: 50px;
+        text-align: left;
+        box-shadow: 0px 2px 15px rgba(0,0,0,0.1);
+      }
+
+      .footer-newsletter form input[type="email"]{
+        border:0;
+        padding: 4px 8px;
+        width: calc(100% - 100px);
+      }
+
+      .footer-newsletter form input[type="submit"]{
+        position:absolute;
+        top: 0;
+        right: -1px;
+        bottom: 0;
+        border: 0;
+        background: #2e0257;
+        font-size: 16px;
+        padding: 0 20px;
+        color: #fff;
+        transition: 0.3s;
+        border-radius: 50px;
+        box-shadow: 0px 2px 15px rgba(0,0,0,0.1);
+      }
+
+      .social-links{
+        margin-top: 30px;
+      }
+
+      .social-links a{
+        font-size: 18px;
+        display: inline-block;
+        background: #400369;
+        color: #fff;
+        line-height: 1;
+        padding: 8px 0;
+        margin-right: 4px;
+        border-radius: 50%;
+        text-align: center;
+        height: 36px;
+        width: 36px;
+        transition: 0.3s;
+      }
+
+      .social-links a:hover{
+        background: #7202db;
+        color: #28023a;
+        text-decoration: none;
+      }
+
+      /*End Footer*/
+    </style>
+    
     <title>Tweet</title>
   </head>
   <body>
-    {% block content %}
+    {% include 'components/navbar.html' %}
+    <div class="container">
+        {% block content %}
 
-    {% endblock content %}
+        {% endblock content %}
+    </div>
+
+
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <h3>Twitter</h3>
+              <p>Twitter is an American microblogging and social networking service on which users post and 
+                interact with messages known as "tweets".Registered users can post, like and retweet 
+                tweets, but unregistered users can only read them.</p>
+            </div>
+          </div>
+          <div class="row footer-newsletter justify-content-center">
+            <div class="col-lg-6">
+              <form method="POST">
+                <input type="email" name="email" placeholder="Enter Email">
+                <input type="submit" value="suscribe">
+              </form>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+      </div>
+      
+    </footer>
+    
 
     <!-- Optional JavaScript; choose one of the two! -->
 
