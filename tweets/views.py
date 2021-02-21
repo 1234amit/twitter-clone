@@ -7,7 +7,7 @@ from .forms import TweetForm
 # Create your views here.
 
 def home_view(request, *args, **kwargs):
-    return render(request, 'pages/home.html', context={})
+    return render(request, 'tweets/home.html', context={})
 
 def tweet_create_view(request, *args, **kwargs):
     form = TweetForm()
