@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Welcome to tweet 2</h1>
-<div id="tweets">
+<div class="row text-center">
+    <div class="col">
+        <h1>Welcome to tweet 2</h1>
+    </div>
+</div>
+
+<div class="row" id="tweets">
     Loding....
 </div>
+
 <script>
     const tweetsElement = document.getElementById("tweets")
     // tweetsElement.innerHTML = 'Loading.....'
